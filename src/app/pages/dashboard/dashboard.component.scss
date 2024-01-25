@@ -2,17 +2,31 @@
   padding: 40px;
 }
 
-input {
-  margin-bottom: 25px;
+.user-card {
+  display: block;
+  margin-bottom: 30px;
 }
 
-.button-section {
+.dashboard-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.78px;
+}
+
+.dashboard-input {
+  box-sizing: border-box;
+  width: 617px;
+  height: 48px;
+  border: 1px solid rgba(224, 226, 231, 1);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 25px;
 }
 
 .button {
   box-sizing: border-box;
   padding: 16px 32px;
-  margin-right: 10px;
+  margin-right: 35px;
   border: none;
   border-radius: 12px;
   color: white;

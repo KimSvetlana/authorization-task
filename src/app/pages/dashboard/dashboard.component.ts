@@ -46,11 +46,14 @@ export class DashboardComponent {
 
   messageButtonClick() {
     const formValue = this.inputForm.getRawValue();
-    const warningMessage = formValue.warningMassage;
+    let warningMessage = formValue.warningMassage;
+    if(warningMessage === "") warningMessage = "Поле для сообщений не заполнено"
     this.warningService.warningSubject.next({
       status: "warning",
       message: warningMessage
     });
+
+    this.inputForm.setValue({warningMassage: ''});
   }
 
 }
