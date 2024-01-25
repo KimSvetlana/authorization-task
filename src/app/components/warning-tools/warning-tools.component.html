@@ -1,0 +1,5 @@
+<div  *ngFor="let warning  of warnings; index as i">
+  <app-warning-item [message] ="warning?.message" [status]="warning?.status"
+    (itemClose)="removeElementByIndex(i)">
+  </app-warning-item>
+</div>

@@ -1,0 +1,15 @@
+<div class="card-wrapper">
+  <section class="icon-section">
+    <div *ngIf="iconUrl; else elseBlock">
+        <img src="{{iconUrl}}" alt="icon" class="icon">
+    </div>
+    <ng-template #elseBlock>
+      <div class="icon-img"></div>
+    </ng-template>
+
+  </section>
+  <section class="user-info-section">
+    <p>{{userInfo?.userName}}</p>
+    <p>ID пользователя: {{userInfo?.userId}}</p>
+  </section>
+</div>

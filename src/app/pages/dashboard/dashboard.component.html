@@ -1,0 +1,15 @@
+<div class="dashboard-wrapper">
+  <app-user-card [userInfo] = "user"></app-user-card>
+  <div class="input-wrapper">
+    <h3>Сообщение</h3>
+    <form [formGroup]="inputForm">
+      <input type="text" name="warningMassage" formControlName="warningMassage">
+    </form>
+      <div class="button-section">
+      <button class="error button" id="error" (click)="buttonClick($event)">Ошибка</button>
+      <button class="warning button" id="warning" (click)="buttonClick($event)">Предупреждение</button>
+      <button class="ok button" id="ok" (click)="buttonClick($event)">Успех</button>
+      <button class="massage button" id="message" (click)="messageButtonClick()">Сообщение</button>
+    </div>
+  </div>
+</div>

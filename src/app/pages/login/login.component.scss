@@ -1,0 +1,17 @@
+.login-page {
+  // min-height: inherit;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  max-width: fit-content;
+}
+
+.login-header{
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
