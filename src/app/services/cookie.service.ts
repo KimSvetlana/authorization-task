@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CookieService as ngxCookieService } from 'ngx-cookie-service';
-import { ITokensInfo } from './utils';
+import { ITokensInfo } from '../utils';
 
 @Injectable({
   providedIn: 'root'

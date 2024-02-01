@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, of } from 'rxjs';
 import { DataService } from './data.service';
-import { IUserInfo, Status } from './utils';
+import { IUserInfo, Status } from '../utils';
 import { WarningService } from './warning.service';
 import { CookieService } from './cookie.service';
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/auth.service';
-import { CookieService } from 'src/app/cookie.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { CookieService } from 'src/app/services/cookie.service';
 
 @Component({
   selector: 'app-login',

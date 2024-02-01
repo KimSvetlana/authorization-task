@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WarningService } from 'src/app/warning.service';
+import { WarningService } from 'src/app/services/warning.service';
 import { IErrorItem } from "../../utils"
 
 @Component({
