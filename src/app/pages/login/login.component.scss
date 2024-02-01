@@ -1,5 +1,19 @@
+h2.title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
 .login-page {
-  // min-height: inherit;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -10,8 +24,14 @@
   max-width: fit-content;
 }
 
-.login-header{
+.login-header {
   width: fit-content;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.login-header svg {
+  margin-bottom: 100px;
 }

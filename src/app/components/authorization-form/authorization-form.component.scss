@@ -8,6 +8,7 @@ input {
   max-width: 410px;
 }
 
+
 .input-section:nth-child(2){
   margin-top: 20px;
 }
@@ -32,11 +33,42 @@ input {
   border-radius:5px;
 }
 
-.form-input.login{
-  padding-right: 48px;
+@media screen and (max-width: 430px) {
+  .input-section,
+  .checkbox-section,
+  .button-section {
+    max-width: 300px;
+  }
+
+  .form-input {
+    width:300px;
+  }
+}
+
+.form-input.error {
+  border-color: red;
+}
+
+
+.form-input {
+  padding-right: 40px;
 }
 .input-icon {
-  margin-left: -48px;
+  align-self: center;
+  color: rgba(76, 84, 244, 1);
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: -30px;
+}
+
+.input-icon-err {
+  align-self: center;
+  color: red;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: -30px;
 }
 
 .checkbox-section {

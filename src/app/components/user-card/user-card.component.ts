@@ -12,17 +12,19 @@ interface IUserInfo {
   templateUrl: './user-card.component.html',
   styleUrls: ['./user-card.component.scss']
 })
+
 export class UserCardComponent {
   iconUrl: string | undefined;
+  imageErr: boolean = false;
   @Input() userInfo: IUserInfo | undefined;
-
-  constructor(){
-  }
 
   ngOnInit(): void {
     if(this.userInfo?.userAvatar !== ''){
-      this.iconUrl = this.userInfo?.userAvatar
+      this.iconUrl = this.userInfo?.userAvatar;
     }
+  }
 
+  onImageError(){
+    this.imageErr = true;
   }
 }

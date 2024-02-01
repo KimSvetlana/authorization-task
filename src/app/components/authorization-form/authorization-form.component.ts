@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import {
-  FormsModule,
   FormGroup,
   FormControl,
   Validators,
-  ReactiveFormsModule,
 } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
@@ -16,10 +14,11 @@ import { Router } from '@angular/router';
 })
 export class AuthorizationFormComponent {
   hide: boolean = true;
-  myForm: FormGroup;
+  isAuthErr: boolean = false;
+  authForm: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) {
-    this.myForm = new FormGroup({
+    this.authForm = new FormGroup({
       userLogin: new FormControl('', [Validators.required, Validators.email]),
       userPassword: new FormControl('', [
         Validators.required,
@@ -30,18 +29,36 @@ export class AuthorizationFormComponent {
   }
 
   async submit() {
-    const formValue = this.myForm.getRawValue();
+    const formValue = this.authForm.getRawValue();
     const login = formValue.userLogin;
     const password = formValue.userPassword;
+
+    if(formValue.userCheckbox) localStorage.setItem(login, password);
+
     this.authService.login(login, password)
     .subscribe((status: boolean) => {
       if (status) {
         // Authentication successful
         this.router.navigate(['/dashboard']);
       } else {
-        // Handle authentication failure
+          this.isAuthErr = true;
       }
     });
+  }
 
+  onLoginInputBlur() {
+    const formValue = this.authForm.getRawValue();
+    const login = formValue.userLogin;
+    if(login){
+      let password = localStorage.getItem(login);
+      if(password) this.authForm.patchValue({userPassword: password});
+      else  this.authForm.patchValue({userPassword: ''});
+    }
+    else this.authForm.patchValue({userPassword: ''});
+  }
+
+  inputChange(){
+    if(this.isAuthErr) this.isAuthErr = !this.isAuthErr;
+    this.onLoginInputBlur()
   }
 }

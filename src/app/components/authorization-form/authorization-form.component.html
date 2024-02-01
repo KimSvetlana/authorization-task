@@ -1,16 +1,28 @@
 <div class="form-wrapper">
-  <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+  <form [formGroup]="authForm" novalidate (ngSubmit)="submit()">
     <section class="input-section">
         <label>Логин*</label>
-        <input class="form-input" name="login"   formControlName="userLogin" placeholder="mail@simmmple.com"/>
-    </section>
+        <div class="input-wrapper">
+          <input class="form-input" name="login"
+          [ngClass]="{error: isAuthErr}"
+          formControlName="userLogin"
+          placeholder="mail@simmmple.com"
+          (blur)="onLoginInputBlur()"
+          (change)="inputChange()"
+        />
+          <mat-icon  *ngIf="isAuthErr" class="material-icons-outlined input-icon-err">error_outlined</mat-icon>
+        </div>
+      </section>
+    <!-- (focus)="onPasswordInputFocus()" -->
     <section class="input-section">
         <label>Пароль*</label>
         <div class="input-wrapper">
-          <input class="form-input login" name="password"  [type]="hide ? 'password' : 'text'" formControlName="userPassword" placeholder="Мининмум 8 символов"/>
-          <button class="input-icon" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
+          <input class="form-input login" name="password"
+            [ngClass]="{error: isAuthErr}"
+            [type]="hide ? 'password' : 'text'" formControlName="userPassword"
+            placeholder="Мининмум 8 символов"
+          />
+          <mat-icon (click)="hide = !hide" class="input-icon" mat-icon-button>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </div>
     </section>
     <section class="checkbox-section">
@@ -21,7 +33,7 @@
       <a href="#">Забыли пароль?</a>
     </section>
     <section class="button-section">
-      <button mat-flat-button [disabled]="myForm.invalid">Войти</button>
+      <button mat-flat-button [disabled]="authForm.invalid">Войти</button>
     </section>
 </form>
 </div>

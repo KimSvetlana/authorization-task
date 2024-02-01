@@ -5,16 +5,18 @@ export interface IUserInfo {
   userRole: number,
 }
 
+export interface ITokensInfo {
+  token: string;
+  refreshToken: string;
+}
+
 export interface IResponse {
   hasError: boolean;
   errors: string[];
   total: number;
   data: {
     userInfo: IUserInfo;
-    tokens: {
-      token: string;
-      refreshToken: string;
-    };
+    tokens: ITokensInfo;
   };
 }
 

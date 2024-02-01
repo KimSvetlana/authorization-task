@@ -1,12 +1,11 @@
 <div class="card-wrapper">
   <section class="icon-section">
     <div *ngIf="iconUrl; else elseBlock">
-        <img src="{{iconUrl}}" alt="icon" class="icon">
+        <img *ngIf="!imageErr; else elseBlock" src="{{iconUrl}}" alt="icon" class="icon" (error)="onImageError()">
     </div>
     <ng-template #elseBlock>
       <div class="icon-img"></div>
     </ng-template>
-
   </section>
   <section class="user-info-section">
     <p>{{userInfo?.userName}}</p>

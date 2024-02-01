@@ -1,5 +1,7 @@
 <div  [@slideIn] *ngIf="isVisible" class="warning-item-wrapper {{status}}-status">
-  <mat-icon fontIcon="error_outlined" class="material-icons-outlined warning-icon"></mat-icon>
+  <span class="icon-wrapper">
+    <mat-icon fontIcon="error_outlined" class="material-icons-outlined warning-icon"></mat-icon>
+  </span>
   <p class="message">{{message}}</p>
   <mat-icon fontIcon="close" class="warning-close-button" (click)="close()"></mat-icon>
 </div>

@@ -12,10 +12,13 @@
   font-size: 18px;
   line-height: 21.78px;
 }
+.dashboard-form{
+  max-width: 770px;
+}
 
 .dashboard-input {
   box-sizing: border-box;
-  width: 617px;
+  width: 80%;
   height: 48px;
   border: 1px solid rgba(224, 226, 231, 1);
   border-radius: 5px;
@@ -34,6 +37,7 @@
   line-height: 18px;
   font-weight: 600;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .button.error {

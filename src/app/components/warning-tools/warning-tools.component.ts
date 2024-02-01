@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { WarningService } from 'src/app/warning.service';
-import { IErrorItem, Status } from "../../utils"
+import { IErrorItem } from "../../utils"
 
 @Component({
   selector: 'app-warning-tools',
