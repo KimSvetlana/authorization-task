@@ -29,8 +29,6 @@ export class WarningItemComponent {
   @Input() status: string | undefined;
   @Output() itemClose = new EventEmitter();
 
-  constructor() {}
-
   close() {
     this.isVisible = !this.isVisible;
     this.itemClose.emit();

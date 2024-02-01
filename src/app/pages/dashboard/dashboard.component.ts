@@ -4,13 +4,6 @@ import { IUserInfo, message } from '../../utils';
 import { WarningService } from 'src/app/warning.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-let testUser =  {
-  userId: 35,
-  userName: "Qwe Qwe",
-  userAvatar: "https://content.gamedev-academy.com/assets/user-uploads/%D0%9F%D0%B0%D1%80%D1%84%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9.jpg",
-  userRole: 1,
-};
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
